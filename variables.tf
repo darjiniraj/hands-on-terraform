@@ -1,18 +1,24 @@
-variable "s3_bucket_name" {
-#   default     = "terraform-bucket"
-  description = "Name of the S3 bucket"
+variable "s3_bucket_prefix" {
+  #   default     = "terraform-bucket"
+  description = "Prefix of the S3 bucket"
   type        = "string"
 }
 
-variable "s3_tags" {
-  type = "map"
-  default = {
+variable "s3_region" {
+  type = "string"
+  #default = "us-east-1"
+}
+
+variable "environment" {
+  type    = "string"
+  default = "test"
+}
+
+
+locals {
+  s3_tags = {
     created_by  = "terraform"
-    environment = "aws"
+    environment = "${var.environment}"
   }
 }
-variable "s3_regions" {
-  type    = "list"
-  default = ["us-east-1", "ap-southeast-2"]
 
-}
