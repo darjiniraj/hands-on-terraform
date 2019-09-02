@@ -1,0 +1,13 @@
+terraform validate 
+terrafrom plan
+terraform plan -refresh=false 
+
+terraform apply
+terraform apply -auto-approve
+export TF_CLI_ARGS_apply="-auto-approve"
+
+terraform fmt
+terraform fmt -diff
+
+terrafrom plan -destroy -target=<target_name>
+terraform destroy
