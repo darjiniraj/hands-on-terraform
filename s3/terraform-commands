@@ -1,3 +1,5 @@
+terraform init
+
 terraform validate 
 terrafrom plan
 terraform plan -refresh=false 

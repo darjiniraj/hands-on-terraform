@@ -3,10 +3,11 @@ resource "aws_s3_bucket" "main" {
   acl    = "private"
   tags = "${local.s3_tags}"
   region = "${var.s3_region}"
+  force_destroy = true
 
-  lifecycle {
-    prevent_destroy = "true"
-  }
+  # lifecycle {
+  #   prevent_destroy = "true"
+  # }
 
 server_side_encryption_configuration {
     rule {
